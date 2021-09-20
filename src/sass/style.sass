@@ -1,6 +1,6 @@
 @import variables
 @import fonts
-
+@import media
 
 //common styles
 *
@@ -8,13 +8,26 @@
 	padding: 0
 	margin: 0
 
+a
+	color: #FFFFFF
+	text-decoration: none
+
+	&:hover
+		text-decoration: underline
+
+ul
+	list-style-type: none
+
 body
 	background: $background_color
 	font-size: 16px
 
+	position: relative
+	padding-bottom: 470px
+
 .container
 	margin: 0 auto
-	max-width: 1540px
+	max-width: 1520px
 	min-width: 720px
 	height: auto
 
@@ -37,6 +50,26 @@ h2
 button
 	border: none
 
+.buttonType1
+	width: 380px
+	height: 70px
+	background: #1566B3
+
+	font-family: 'Gilroy', sans-serif
+	font-weight: 600
+	font-size: 1.25rem
+	line-height: 70px
+	
+	text-transform: uppercase
+	text-align: center
+	color: #FFFFFF
+
+	cursor: pointer
+	border-radius: 2px
+	box-shadow: 0 4px #04305a
+	&:hover
+		background-color: #2f75b8
+
 .buttonType2
 	width: 200px
 	height: 60px
@@ -55,111 +88,132 @@ button
 
 
 //banner section
-header
-	position: relative
-	width: 100%
-	min-height: 1000px
-	
-nav
+.header
 	position: absolute
 	top: 0
 	left: 0
-	z-index: 1
-	padding: 0 58px
-	
 	width: 100%
-	height: 232px
-
-	display: flex
-	justify-content: space-between
+	z-index: 10
 
 	background: rgba(0, 0, 0, 0)
+	text-align: center
+	font-family: 'Gilroy', sans-serif
+	font-weight: 500
 	color: #ffffff 
 
-	.nav_item
-		margin-top: 46px
-		position: relative
+.nav
+	font-size: 1rem
 
-	.submenu::after
-		content: ''
-		width: 0
-		height: 0
+	&__arrow
+		display: inline-block
+		margin-left: 10px
+		transform: translateY(-2px)
+
+	&__submenu
+		font-family: "Gilroy"
+    font-weight: 400
+    font-size: 1rem	
+
+	&__item
+		position: relative
+		padding: 10px
+
+	a
+		display: block
+		width: 100%
+		height: 100%
+
+.submenu-icon
+	width: 0px
+	height: 0px
+
+	border-left: 4px solid transparent
+	border-right: 4px solid transparent
+	border-top: 6px solid #fff
+
+.burger-menu
+	position: absolute
+	top: 10px
+	right: 20px
+	z-index: 10
+
+	width: 50px
+	height: 30px
+
+	&__center
+		display: block
+		width: 100%
+		height: 4px
 		position: absolute
-		top: 8px
-		right: -10px
+		left: 0
+		top: 50%
+		transform: scale(1) translateY(-50%)
+		transition: all 0.3s ease 0s
+		background-color: #fff
 
-		border-top: 4px solid #fff
-		border-left: 4px solid transparent
-		border-right: 4px solid transparent
+	&::after, &::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 4px
+		background-color: #fff
+		left: 0
+		transition: all 0.3s ease 0s
 
-	.logo
-		width: 167px
-		height: 232px
-		
-	.phone
-		margin-top: 42px
-		min-width: 360px
-		display: flex
-		justify-content: space-between
+	&::after
+		bottom: 0
 
-		font-family: 'Oswald', sans-serif
-		font-weight: 500
-		font-size: 1.25rem
-		transform: translateY(-4px)
-		
-		&_item
-			display: flex
-			justify-content: space-between
-			justify-items: center
-		&_pic
-			margin-right: 10px
-				
-	.social_links
-		min-width: 80px
-		margin-top: 42px
-		display: flex
-		justify-content: space-between
-		justify-items: center
+	&::before
+		top: 0
+
+	&_active
+		span
+			transform: scale(0)
+
+		&::before
+			top: 50%
+			transform: rotate(-45deg) translateY(-50%)
+
+		&::after
+			bottom: 50%
+			transform: rotate(45deg) translateY(50%)
+
+.logo
+	width: 167px
+
+.phone
+	display: flex
+	justify-content: center
+
+	font-family: 'Oswald'
+	font-size: 1.25rem
 	
-	.phone_order
-		margin-top: 42px
-		font-family: 'Montserrat', sans-serif
-		font-weight: 700
-		font-size: 1rem
-		line-height: 1.25rem
-		text-transform: uppercase
+	&__pic
+		margin-right: 10px
 
-		position: relative
-		a
-			color: #FFFFFF
-			text-decoration: none
-			display: block
-			&::after
-				content: ''
-				width: 100%
-				height: 1px
-				background-color: #FFFFFF
+.social-links
+	width: 100%
+	display: flex
+	justify-content: space-evenly
 
-				position: absolute
-				top: 1.25rem
-				left: 0
-					
+.order-phone
+	font-family: 'Montserrat'
+	font-weight: 700
+	font-size: 1rem
+	line-height: 1.25rem
+	text-transform: uppercase
+	text-align: center
+
 .headder_slider
 	width: 100%
-	min-height: inherit
 
 	.slider_wrapper
 		width: 100% //will be changed in other sliders (it's only for first of them)
-		min-height: inherit
 		overflow: hidden
 	
 	.slider_line
 		display: flex
-		min-height: inherit
 		transition-duration: 2s
-	
-	.container
-		margin-bottom: 200px
 	
 	.arrow
 		display: flex
@@ -181,7 +235,6 @@ nav
 		right: 20px
 
 	.slide
-		height: 100%
 		padding-top: 232px
 		padding-left: 120px
 		padding-right: 120px
@@ -221,28 +274,10 @@ nav
 			line-height: 8rem
 		h3
 			margin-top: 31px
-	
+
 	.buttonType1
 		margin-top: 95px
-		width: 380px
-		height: 70px
-		background: #1566B3
 
-		font-family: 'Gilroy', sans-serif
-		font-weight: 600
-		font-size: 1.25rem
-		line-height: 70px
-		
-		text-transform: uppercase
-		text-align: center
-		color: #FFFFFF
-
-		cursor: pointer
-		border-radius: 2px
-		box-shadow: 0 4px #04305a
-		&:hover
-			background-color: #2f75b8
-		
 	.review
 		position: relative
 		margin-top: 3rem
@@ -289,6 +324,9 @@ nav
 			top: 4px
 			left: -48px
 
+.banner
+	position: relative
+
 .service
 	position: absolute
 	bottom: 0
@@ -300,7 +338,7 @@ nav
 	justify-content: space-around
 	align-items: center
 	background-color: rgba(0, 0, 0, 0.54)
-	
+
 	.item
 		display: flex
 		align-items: center
@@ -389,11 +427,11 @@ nav
 	min-height: 1240px
 	
 	.slider_variants
-		
+		margin: 0 auto
+		min-width: 320px
+		max-width: 1520px
 		.slider_wrapper
-			margin: 0 auto
-			width: 1520px
-			
+			width: 100%
 			overflow: hidden
 
 			.slider_tabs
@@ -639,40 +677,112 @@ nav
 			cursor: default
 
 	.content
+		position: relative
 		width: 100%
 		min-height: 758px
 		margin-top: 90px
-		background: #fff
 
-		.orderForm
-			display: inline-block
-			float: left
-			width: 952px
-			min-height: 758px
-
-			h2
-				font-family: 'Book Antiqua'
-				font-size: 4rem
-				font-weight: 400
-				line-height: 4rem
-				letter-spacing: 0px
-				text-align: left
-				color: $subtitle_color
-
-			
+		h2
+			font-family: 'Book Antiqua'
+			font-size: 4rem
+			font-weight: 400
+			line-height: 4rem
+			letter-spacing: 0px
+			text-align: left
+			color: $subtitle_color
 		
+		.orderForm
+			margin-top: 50px
+			width: 952px
+			min-height: 652px
+
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+
+			label
+				display: block
+
+				font-family: 'Muller'
+				font-size: 1.5rem
+				font-weight: 500
+				line-height: 1.5rem
+				letter-spacing: 0rem
+				text-align: left
+
+			input, select, textarea
+				display: block
+				margin-top: 15px
+				padding: 0 24px
+
+				font-family: 'Muller'
+				font-size: 1.14rem
+				font-weight: 500
+				line-height: 1rem
+				letter-spacing: 0rem
+				text-align: left
+
+			select
+				appearance: none
+				background: #fff url('../assets/icons/order_room_ico/arrow.svg') no-repeat right
+				background-position-x: calc(100% - 24px)
+		
+			textarea
+				padding-top: 24px
+
+			.firstPart
+				width: 466px
+				min-height: 506px
+
+				display: flex
+				justify-content: space-between
+				flex-wrap: wrap
+				
+				input[type=date]
+					width: 221px
+					height: 64px
+
+				select
+					width: 467px
+					height: 64px
+
+				input[type=number]
+					width: 467px
+					height: 64px
+
+			.secondPart
+				width: 434px
+				min-height: 506px
+
+				input[type=text], input[type=number]
+					margin-bottom: 33px
+					width: 434px
+					height: 64px
+
+				textarea
+					width: 434px
+					height: 204px
+
+			button
+				transform: translateY(60px)
+
 		.pic
-			display: inline-block
-			float: right
+			position: absolute
+			top: 16px
+			right: 0
 			width: 493px
 			height: 749px
-			
+
 
 // actions section
 .actions
 	min-height: 1760px
+
+	h2
+		margin-top: 200px
+
 	.container
-		margin-top: 68px
+		margin-top: 80px
 
 	.block
 		width: 750px
@@ -717,14 +827,393 @@ nav
 			margin-top: 28px
 
 
+//photos section
+.photos
+	margin-top: 200px
 
 
+	h2
+		width: 724px
+		margin: 0 auto
 
+	&__grid-container
+		margin: 80px auto
+		max-width: 1540px
+		min-width: 320px
+		height: auto
+		display: grid
+
+		grid-template-columns: repeat(auto-fit, minmax(auto, 318px))
+		grid-auto-flow: row dense
+		grid-auto-rows: minmax(auto, 218px)
+		gap: 30px
+
+		button
+			width: 394px
+			margin-left: calc(50% - 192px)
 		
+	&__grid-elem-1
+		order: 1
+		background: url('../assets/images/place_photos/1.jpg') center (center / cover) no-repeat
+
+	&__grid-elem-2
+		order: 4
+		background: url('../assets/images/place_photos/2.jpg') center (center / cover) no-repeat
+
+	&__grid-elem-3
+		order: 3
+		background: url('../assets/images/place_photos/3.jpg') center (center / cover) no-repeat
+
+	&__grid-elem-4
+		order: 2
+		background: url('../assets/images/place_photos/4.jpg') center (center / cover) no-repeat
+
+	&__grid-elem-5
+		order: 6
+		background: url('../assets/images/place_photos/5.jpg') center (center / cover) no-repeat
+
+	&__grid-elem-6
+		order: 5
+		background: url('../assets/images/place_photos/6.jpg') center (center / cover) no-repeat
+
+	&__grid-elem-7
+		order: 8
+		background: url('../assets/images/place_photos/7.jpg') center (center / cover) no-repeat
+
+	&__grid-elem-8
+		order: 7
+		background: url('../assets/images/place_photos/8.jpg') center (center / cover) no-repeat
+
+	&__grid-elem_big
+		grid-column: span 2
+		grid-row: span 2
+
+	&__grid-elem_half
+		grid-row: span 2
 
 
+//review section
+.review
+	min-height: 1400px
+	margin-top: 200px
+
+	.review_slider
+		margin: 80px auto 0
+		min-width: 320px
+		max-width: 1520px
+		.slider_wrapper
 			
+			width: 100%
 			
+			overflow: hidden
+
+			.slider_line
+				margin-top: 52px
+				display: flex
+				justify-content: space-between
+				align-items: center
+
+				min-height: 600px
+				transition-duration: 2s
+
+				.slide
+					width: 495px
+					min-height: 560px
+
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+
+					.descr
+						position: relative
+						padding: 60px
+
+						font-family: 'Gilroy'
+						font-size: 1.5rem
+						font-weight: 300
+						line-height: 2rem
+						letter-spacing: 0rem
+						text-align: left
+						color: $text_color
+						
+						.inst_icon
+							position: absolute
+							top: 8px
+							right: 8px
+
+							width: 34px
+							height: 34px
+
+							background: url('../assets/icons/review/instagram.svg') center (center) no-repeat
+
+						.quotes_icon
+							position: absolute
+							top: -25px
+							left: 62px
+
+							width: 66px
+							height: 50px
+
+							background: url('../assets/icons/review/quotes.svg') center (center) no-repeat
+						
+					.user
+						width: 100%
+						display: flex
+						align-items: center
+
+						.avatar
+							width: 100px
+							height: 100px
+							margin-right: 30px
+							
+							border-radius: 100%
+							background: $title_color url('../assets/icons/user.svg') center (center) no-repeat
 
 
+						.name
+							font-family: 'Gilroy'
+							font-size: 1.5rem
+							font-weight: 400
+							line-height: 2rem
+							letter-spacing: 0rem
+							text-align: left
+							color: #211212
 
+						.date
+							font-family: 'Muller'
+							font-size: 1.15rem
+							font-weight: 400
+							line-height: 2rem
+							text-align: left
+							color: rgba(51, 51, 51, 0.496405)
+
+			.slider_controls
+				margin: 120px auto 0
+				margin-bottom: 20px
+				width: 500px
+				height: 50px
+
+				display: flex
+				justify-content: space-between
+				align-items: center
+
+				.skroll_bar
+					display: flex
+					justify-content: space-between
+					align-items: center
+
+					width: 350px
+					height: 50px
+
+					.skroll_line
+						width: 200px
+						height: 4px
+						background-color: #fff
+						
+						.skroll_amount
+							width: 0
+							height: 100%
+							background-color: $subtitle_color
+							transition-duration: 2s
+
+					.slide_number, .slide_total
+						width: 50px
+						height: 50px
+
+						font-family: 'Muller'
+						font-weight: bold
+						font-size: 2rem
+						line-height: 3rem
+						text-align: center
+						text-transform: uppercase
+						color: $subtitle_color
+
+
+//cashback section
+.cashback
+	position: relative
+	min-height: 524px
+	background: url('../assets/images/cashback/planet.jpg') center (center / cover) no-repeat
+	h2
+		padding-top: 126px
+
+		font-family: 'Book Antiqua'
+		font-size: 4rem
+		font-weight: 400
+		line-height: 5rem
+
+	.sale
+		width: 270px
+		position: absolute
+		top: 204px
+		left: calc(46% - 204px)
+
+		font-family: 'Oswald'
+		font-size: 8.2rem
+		font-weight: 700
+		line-height: 12rem
+		color: transparent
+		-webkit-background-clip: text
+		background-image: linear-gradient(110deg, #1577E4 6%, #00D583 100%)
+		
+	.debit_card
+		position: absolute
+		top: 234px
+		right: calc(46% - 222px)
+
+
+//location section
+.location
+	
+	min-height: 780px
+	margin-top: 225px
+
+	.links
+		width: 575px
+		
+		display: flex
+		justify-content: space-between
+
+		a
+			display: block
+			font-family: 'Gilroy'
+			font-size: 1.5rem
+			font-weight: 600
+			line-height: 2rem
+			text-align: center
+
+	.map_pic
+		margin-top: 25px
+		width: 878px
+		height: 705px
+
+	.contacts
+		margin-top: 60px
+		max-width: 542px
+
+		h3
+			font-family: 'Gilroy'
+			font-size: 2rem
+			font-weight: 500
+			line-height: 3rem
+ 			text-align: left
+
+		h4
+			display: inline-block
+
+			font-family: 'Gilroy'
+			font-size: 1.5rem
+			font-weight: 400
+			line-height: 1.75rem
+			vertical-align: top
+
+		.pic
+			display: inline-block
+			margin-right: 24px
+
+		.content
+			margin-left: 54px
+
+		.phone
+			margin-top: 50px
+
+			.content
+				display: flex
+				justify-content: flex-start
+				flex-wrap: wrap
+
+				.number
+					width: 172px
+					margin-right: 40px
+
+					font-family: 'Gilroy'
+					font-size: 1.25rem
+					font-weight: 600
+					line-height: 1.5rem
+
+		.mail, .address, .base, .questions
+			margin-top: 50px
+
+		.questions
+			margin-top: 100px
+
+			.write
+				margin-top: 40px
+
+			.pic
+				margin-left: 20px
+				margin-right: 10px
+
+
+// footer
+footer
+	min-height: 270px
+	width: 100%
+
+	position: absolute
+	bottom: 0
+	left: 0
+
+	font-family: 'Gilroy'
+	background-color: #004281
+
+	.container
+		margin-top: 90px
+
+	.buttonType2
+		width: 325px
+		height: 60px
+		
+		background-color: #004281
+
+		font-size: 1rem
+		font-weight: 600
+		color: #fff
+
+		border: 2px solid #fff
+		box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.25)
+
+	ul
+		list-style: none
+
+		font-family: 'Gilroy'
+		font-size: 1.25rem
+		font-weight: 500
+		line-height: 1.25rem
+
+		li
+			margin-bottom: 20px
+		
+		li:last-child
+			margin-bottom: 0
+
+		a
+			text-decoration: none
+			color: #fff
+
+	.phone_number
+		font-family: Oswald
+		font-size: 2.5rem
+
+		font-weight: 700
+		line-height: 3.2rem
+		color: #fff
+
+	.working_time
+		font-size: 1rem
+		font-weight: 400
+		line-height: 1.25rem
+		letter-spacing: 0.03rem
+		color: #fff
+		opacity: 0.8
+
+	.social_link
+		margin-top: 24px
+		width: 180px
+
+		display: flex
+		justify-content: space-between
+
+		.link
+			cursor: pointer
+		

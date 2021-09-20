@@ -3,6 +3,40 @@ import SliderType2 from './sliderType2.js';
 // const $sliders = document.querySelectorAll('.slider');
 // const slider = new Slider( creatObjFromSlider( $sliders[0] ) );
 
+
+
+
+
+
+
+const burgerMenu = document.querySelector('.burger-menu');
+const nav = document.querySelector('.nav');
+
+burgerMenu.addEventListener('click', () => {
+  nav.classList.toggle('header__nav_active');
+  burgerMenu.classList.toggle('burger-menu_active');
+})
+
+
+
+
+const navItem = document.querySelectorAll('div[data-submenu="1"]');
+
+navItem.forEach( (item) => {
+	item.addEventListener('click', () => {
+		item.lastElementChild.classList.toggle('nav__submenu_active');
+	});
+})
+
+
+
+
+
+
+
+
+
+
 const slider = new Slider('headder_slider');
 
 window.addEventListener('resize', slider.init);
@@ -35,3 +69,12 @@ slider2.init();
 window.addEventListener( 'resize', slider2.init );
 slider2.arrowLeft.addEventListener('click', slider2.backSlide);
 slider2.arrowRight.addEventListener('click', slider2.nextSlide);
+
+
+const slider3 = new SliderType2('review_slider');
+
+slider3.init();
+
+window.addEventListener( 'resize', slider3.init );
+slider3.arrowLeft.addEventListener('click', slider3.backSlide);
+slider3.arrowRight.addEventListener('click', slider3.nextSlide);

@@ -1,49 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rus">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Frigate</title>
+	<title>Фрегат</title>
 
 	<link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
-	<header>
-		<!-- change navigation section  -->
-		<nav>
-			<div class="nav_item submenu">Номера и цены</div>
-			<div class="nav_item submenu">Услуги</div>
-			<div class="nav_item submenu">О базе отдыха</div>
-			<div class="nav_item">Отзывы</div>
-			<div class="nav_item">Контакты</div>
-			
-			<div class="logo">
+
+	<header class='header'>
+		<div class="header__wrapper">
+			<nav class="header__nav nav">
+				<div data-submenu="1" class="nav__item">Номера и цены 
+					<span class="submenu-icon nav__arrow"></span>
+					<div class="nav__submenu">
+						<ul>
+							<li><a href="#">item1</a></li>
+							<li><a href="#">item2</a></li>
+							<li><a href="#">item3</a></li>
+							<li><a href="#">item4</a></li>
+						</ul>
+					</div>
+				</div>
+	
+				<div data-submenu="1" class="nav__item">Услуги 
+					<span class="submenu-icon nav__arrow"></span>
+					<div class="nav__submenu">
+						<ul>
+							<li><a href="#">item1</a></li>
+							<li><a href="#">item2</a></li>
+							<li><a href="#">item3</a></li>
+							<li><a href="#">item4</a></li>
+						</ul>
+					</div>
+				</div>
+	
+				<div data-submenu="1" class="nav__item">О базе отдыха 
+					<span class="submenu-icon nav__arrow"></span>
+					<div class="nav__submenu">
+						<ul>
+							<li><a href="#">item1</a></li>
+							<li><a href="#">item2</a></li>
+							<li><a href="#">item3</a></li>
+							<li><a href="#">item4</a></li>
+						</ul>
+					</div>
+				</div>
+	
+				<div class="nav__item">Отзывы</div>
+				<div class="nav__item">Контакты</div>
+			</nav>
+	
+			<div class="header__logo logo">
 				<img src="./assets/images/logo.png" alt="logo">
 			</div>
-			
-			<div class="phone">
-				<div class="phone_item">
-					<div class="phone_pic"><img src="./assets/icons/phone_call.svg" alt="phone"></div>
-					<div class="number">8 (3952) 56-00-26</div>
+	
+			<div class="header__contacts contact">
+				<div class="contact__item contact__item_first phone">
+					<div class="phone__pic"><img src="./assets/icons/phone_call.svg" alt="phone"></div>
+					<div class="phone__number">8 (3952) 56-00-26</div>
 				</div>
-				<div class="phone_item">
-					<div class="phone_pic"><img src="./assets/icons/phone_call.svg" alt="phone"></div>
-					<div class="number">8 (3952) 56-00-26</div>
+	
+				<div class="contact__item phone">
+					<div class="phone__pic"><img src="./assets/icons/phone_call.svg" alt="phone"></div>
+					<div class="phone__number">8 (3952) 56-00-26</div>
 				</div>
+	
+				<div class="contact__item social-links">
+	
+					<div class="social-links__item">
+						<img src="./assets/icons/social/viber.svg" alt="viber">
+					</div>
+	
+					<div class="social-links__item">
+						<img src="./assets/icons/social/instagram.svg" alt="instagram">
+					</div>
+	
+					<div class="social-links__item">
+						<img src="./assets/icons/social/whatsapp.svg" alt="whatsapp">
+					</div>
+	
+				</div>
+	
+				<div class="contact__item order-phone"><a href="#">заказать звонок</a></div>
+			</div>
+	
+			<div class="nav__item burger-menu">
+				<span class='burger-menu__center'></span>
 			</div>
 
-			<div class="social_links">
-				<div class="social_pic"><img src="./assets/icons/social/viber.svg" alt="viber"></div>
-				<div class="social_pic"><img src="./assets/icons/social/instagram.svg" alt="instagram"></div>
-				<div class="social_pic"><img src="./assets/icons/social/whatsapp.svg" alt="whatsapp"></div>
-			</div>
+			<div class="mobile-nav-line"></div>
+		</div>
+	</header>
 
-			<div class="phone_order"><a href="#">заказать звонок</a></div>
-			
-		</nav>
-
-		<!-- I need unique class for each slider with cummon class to all of it  -->
+	<section class="banner">
 		<div class="headder_slider">
 			<div class="slider_wrapper">
 				<div class="slider_line">
@@ -59,7 +111,7 @@
 							<div class="review">
 								<h4>Отзывы отдыхающих</h4>
 								<p>Не в первый раз отдыхаем на этой базе. Как всегда все великолепно: радушный прием, отличное питание, уютное пребывание и блогоустроенный пляж. Хотим отметить вечерние освещение базы и особенно пляжа, которое помогает впитывать энергетику Байкала.</p>
-								<div class="author">Cветлана кулина</div>
+								<div class="author">Cветлана Кулина</div>
 							</div>
 
 						</div>
@@ -75,7 +127,7 @@
 							<div class="review">
 								<h4>Отзывы отдыхающих</h4>
 								<p>Не в первый раз отдыхаем на этой базе. Как всегда все великолепно: радушный прием, отличное питание, уютное пребывание и блогоустроенный пляж. Хотим отметить вечерние освещение базы и особенно пляжа, которое помогает впитывать энергетику Байкала.</p>
-								<div class="author">Cветлана кулина</div>
+								<div class="author">Cветлана Кулина</div>
 							</div>
 						</div>
 					</div>
@@ -90,7 +142,7 @@
 							<div class="review">
 								<h4>Отзывы отдыхающих</h4>
 								<p>Не в первый раз отдыхаем на этой базе. Как всегда все великолепно: радушный прием, отличное питание, уютное пребывание и блогоустроенный пляж. Хотим отметить вечерние освещение базы и особенно пляжа, которое помогает впитывать энергетику Байкала.</p>
-								<div class="author">Cветлана кулина</div>
+								<div class="author">Cветлана Кулина</div>
 							</div>
 						</div>
 					</div>
@@ -163,8 +215,7 @@
 			</div>
 
 		</div>
- 
-	</header>
+	</section>
 
 	<section class="reasons">
 		<h2>
@@ -492,7 +543,6 @@
 		</div>
 	</section>
 
-	<!-- continue later -->
 	<section class="orderRoom">
 		<div class="container">
 
@@ -516,21 +566,50 @@
 			</div>
 
 			<div class="content">
+				<h2>Забронировать номер</h2>
 				<form action="#" class="orderForm">
-					<h2>Забронировать номер</h2>
-					<div class="mainForm">
 
-						<div class="firstPart">
-							
-						</div>
+					<div class="firstPart">
+						<label>Дата заезда <input type="date" name="dateCome" id="dateCome"> </label>
+						
+						<label>Дата отъезда <input type="date" name="dateOut" id="dateOut"> </label>
+						
+						<label>Вид жилья
+							<select name="lodgingType" id="lodgingType">
+								<option>Гостиничный корпус</option>
+								<option>unknowItem</option>
+								<option>unknowItem</option>
+							</select>
+						</label>
+						
+						<label>Вид номера
+							<select name="roomType" id="roomType">
+								<option>Номер 1-Категории “Стандарт”</option>
+								<option>unknowItem</option>
+								<option>unknowItem</option>
+							</select>
+						</label>
+					
+						<label>Количество человек
+							<input type="number" name="personCount" id="personCount" placeholder="Введите количество отдыхающих" min="1" max="10">
+						</label>
+						
+					</div>
 
+					<div class="secondPart">
 
-						<div class="secondPart">
+						<label for="userName">Имя</label>
+						<input type="text" name="userName" id="userName" placeholder="Введите ваше имя" maxlength="50">
 
-						</div>
+						<label for="userPhone">Телефон</label>
+						<input type="number" name="userPhone" id="userPhone" placeholder="Введите ваш номер телефона" maxlength="">
+
+						<label for="userComment">Комментарий</label>
+						<textarea name="userComment" id="userComment" cols="40" rows="10" placeholder="Введите ваш комментарий" maxlength="1000"></textarea>
 
 					</div>
 
+					<button type="submit" class="buttonType1">Забронировать номер</button>
 				</form>
 
 				<div class="pic">
@@ -652,6 +731,337 @@
 
 		</div>
 	</section>
+
+	<section class="photos">
+		<h2>Фотографии местности и базы отдыха</h2>
+		
+		<div class="photos__grid-container">
+			<div class="photos__grid-elem-1 photos__grid-elem_big"></div>
+			<div class="photos__grid-elem-2 "></div>
+			<div class="photos__grid-elem-3 "></div>
+			<div class="photos__grid-elem-4 photos__grid-elem_half"></div>
+			<div class="photos__grid-elem-5 "></div>
+			<div class="photos__grid-elem-6 photos__grid-elem_half"></div>
+			<div class="photos__grid-elem-7"></div>
+			<div class="photos__grid-elem-8 photos__grid-elem_big"></div>
+		</div>
+
+		<button class="buttonType2">Посмотреть фотогалерею</button>
+	</section>
+
+	<section class="review">
+		<h2>Отзывы о базе отдыха “Фрегат”</h2>
+
+		<div class="review_slider">
+			<div class="slider_wrapper">
+
+				<div class="slider_line">
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Анастасия Ли</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Артём Сазонов</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Александр Ким</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Анастасия Ли</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Артём Сазонов</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Александр Ким</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Анастасия Ли</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Артём Сазонов</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slide">
+						<div class="descr">
+							<div class="inst_icon"></div>
+							<div class="quotes_icon"></div>
+
+							"Не в первый раз отдыхаем на этой базе. 
+							Как всегда всё великолепно: радушный приём, отличное питание, уютное пребывание и благоустроенный пляж. 
+							Рекомендую всем для семейного отдыха"
+						
+						</div>
+
+						<div class="user">
+							<div class="avatar"></div>
+							<div class="signature">
+								<div class="name">Александр Ким</div>
+								<div class="date">02.10.2021</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="slider_controls">
+
+					<div class="skroll_bar">
+						<div class="slide_number">01</div>
+						<div class="skroll_line"><div class="skroll_amount"></div></div>
+						<div class="slide_total">03</div>
+					</div>
+
+					<div class="arrow left"><img src="./assets/icons/arrows/Arrow4.png" alt="Right arrow"></div>
+					<div class="arrow right"><img src="./assets/icons/arrows/Arrow3.png" alt="Left arrow"></div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="cashback">
+		<h2>Кешбэк по карте Мир</h2>
+		<div class="sale">20%</div>
+		<div class="debit_card"><img src="./assets/images/cashback/world.png" alt="debit card 'mir'"></div>
+	</section>
+
+	<section class="location">
+		<div class="container">
+			<div class="map">
+				<div class="links">
+					<a href="#">Схема проезда</a>
+					<a href="#">Карта базы</a>
+					<a href="#">Карта офиса</a>
+				</div>
+
+				<div class="map_pic">
+					<img src="./assets/images/map/map.jpg" alt="map">
+				</div>
+			</div>
+
+			<div class="contacts">
+				<h3>Наши конакты</h3>
+				
+				<div class="phone">
+					<div class="pic"><img src="./assets/icons/map/phone.svg" alt="phone"></div>
+					<h4>Звоните по телефонам:</h4>
+					<div class='content'>
+						<div class="number">+7 (3952) 56-00-26</div>
+						<div class="number">+7 (3952) 95-26-55</div>
+						<div class="number">+7 (3952) 95-26-55</div>
+					</div>
+				</div>
+
+				<div class="mail">
+					<div class="pic"><img src="./assets/icons/map/mail.svg" alt="mail"></div>
+					<h4>Электронная почта:</h4>
+					<div class='content'>952655@ramblerR</div>
+				</div>
+
+				<div class="address">
+					<div class="pic"><img src="./assets/icons/map/point.svg" alt="point on the map"></div>
+					<h4>Адрес офиса</h4>
+					<div class='content'>г. Иркутск, ул. Волжская, 51а, 1 этаж</div>
+				</div>
+
+				<div class="base">
+					<div class="pic"><img src="./assets/icons/map/compass.svg" alt="compass"></div>
+					<h4>Адрес базы отдыха</h4>
+					<div class="content">Ольхонский район, Куркутский залив, мыс Бурлог</div>
+				</div>
+
+				<div class="questions">
+					<h3>Остались вопросы?</h3>
+					<div class="write">Напишите нам в 
+						<div class="pic"><img src="./assets/icons/map/WhatsApp.svg" alt="WhatsApp"></div>
+						<a href="#">WhatsApp</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="container_item">
+				<ul>
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Номера и цены</a></li>
+					<li><a href="#">Услуги и развлечения</a></li>
+				</ul>
+			</div>
+
+			<div class="container_item">
+				<ul>
+					<li><a href="#">О нас</a></li>
+					<li><a href="#">Памятка туриста</a></li>
+					<li><a href="#">Схема проезда</a></li>
+				</ul>
+			</div>
+
+			<div class="container_item">
+				<ul>
+					<li><a href="#">Отзывы</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div>
+
+			<div class="container_item">
+				<button class="buttonType2">получить консультацию</button>
+			</div>
+
+			<div class="container_item">
+				<div class="phone_number">+7 (3952) 56-00-26</div>
+				<div class="working_time">Режим работы с 10:00 до 22:00</div>
+
+				<div class="social_link">
+					<div class="viber link"><img src="./assets/icons/footer/viber.png" alt="Viber"></div>
+					<div class="instagram link"><img src="./assets/icons/footer/instagram.png" alt="instagram"></div>
+					<div class="whatsapp link"><img src="./assets/icons/footer/whatsapp.png" alt="whatsapp"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<script src="./scripts/main.js" type="module"></script>
 </body>
 </html>

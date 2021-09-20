@@ -8,9 +8,9 @@ class SliderType2 extends Slider {
   create( className ) {
     super.create( className );
     
-    this.leftSlideNumber = document.querySelector('.slide_number');
-    this.rightSlideNumber = document.querySelector('.slide_total');
-    this.skrollLine = document.querySelector('.skroll_line');
+    this.leftSlideNumber = document.querySelector( `.${className} .slide_number` );
+    this.rightSlideNumber = document.querySelector( `.${className} .slide_total` );
+    this.skrollLine = document.querySelector( `.${className} .skroll_line` );
     this.skrollAmount = this.skrollLine.firstChild;
   }
 
@@ -27,7 +27,8 @@ class SliderType2 extends Slider {
 	}
 
   init() {
-    if( this.sliderWrapper.offsetWidth >= 1490 ) {
+    console.log(this.sliderWrapper.offsetWidth);
+    if( this.sliderWrapper.offsetWidth >= 1440 ) {
       const slidesInWrapper = 3;
       const totalPaddingInWrapper = 40;
       
